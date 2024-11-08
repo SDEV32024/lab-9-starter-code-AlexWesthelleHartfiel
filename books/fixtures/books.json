@@ -1,0 +1,35 @@
+[
+    {
+        "model": "books.book",
+        "pk": "1884432b-e7d3-421a-a1a4-d0b9f67b44e4",
+        "fields": {
+            "title": "Anarchist Cookbook",
+            "author": "Unknown",
+            "price": "0.00",
+            "date_publication": "2001-01-01",
+            "cover": "covers/PythonCookbook.jpg"
+        }
+    },
+    {
+        "model": "books.book",
+        "pk": "2a5fe695-44f9-4209-8f71-a5f27e910026",
+        "fields": {
+            "title": "Robbie William's autobiography",
+            "author": "Joe Mama",
+            "price": "99.99",
+            "date_publication": "2001-01-01",
+            "cover": "covers/Lightweight.jpg"
+        }
+    },
+    {
+        "model": "books.book",
+        "pk": "906eccbe-df2b-422c-870c-7c2e7e711742",
+        "fields": {
+            "title": "Atlas Shrugged",
+            "author": "Ayn Rand",
+            "price": "9.99",
+            "date_publication": "1954-01-01",
+            "cover": "covers/DjangoUnleashed.jpg"
+        }
+    }
+]
