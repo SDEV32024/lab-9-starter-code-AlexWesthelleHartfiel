@@ -14,7 +14,7 @@ class Profile(models.Model):
         null=True,
         on_delete=models.CASCADE,
     )
-    date_of_birth = models.DateField(blank=False, null=False)
+    date_of_birth = models.DateField(blank=True, null=True)
     fav_author = models.CharField(max_length=255)
 
     def __str__(self):

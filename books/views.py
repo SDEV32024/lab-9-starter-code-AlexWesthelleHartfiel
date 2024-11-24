@@ -4,6 +4,8 @@ from django.shortcuts import render
 from django.views.generic import ListView, DetailView
 from .models import Book
 from django.db.models import Q
+from django.contrib.auth.mixins import UserPassesTestMixin
+from django.views.generic.edit import CreateView
 # Create your views here.
 
 class BookListView(ListView):
@@ -26,3 +28,12 @@ class SearchResultsListView(ListView):
         return Book.objects.filter(
             Q(title__icontains=query) | Q(author__icontains=query)
         )
+
+class ManagerRequiredMixin(UserPassesTestMixin):
+    def test_func(self):
+        return self.request.user.groups.filter(name='Manager').exists()
+
+class BookCreateView(ManagerRequiredMixin,CreateView):
+    model = Book
+    fields = ('title', 'author', 'price', 'date_publication', 'cover')
+    template_name = 'books/book_new.html'
